@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>Tugas JSF RSBK</title>
+</h:head>
+  <h:body>
+   <center>
+   <h:form>
+    <h1>Edit Data Mata Kuliah</h1>
+     <table>
+            <tr>
+               <td>Kode Mata Kuliah:</td>
+               <td>
+                   <h:inputText id="KODE" value="#{EditMakul.KODE}" required="true"></h:inputText>
+               </td>
+            </tr>
+            <tr>
+               <td>Nama Makul:</td>
+               <td>
+                   <h:inputText id="NAMA_MAKUL" value="#{EditMakul.NAMA_MAKUL}" required="true"></h:inputText>
+               </td>
+            </tr>
+            <tr>
+               <td>NIP:</td>
+               <td><h:inputText value="#{EditMakul.NIP}"></h:inputText></td>
+            </tr>
+     </table>
+    <br></br>
+    <h:commandButton value="Update" action="#{EditMakul.Update_Makul}">
+     <f:param name="Update_KODE" value="#{EditMakul.KODE}" /></h:commandButton>
+    <br></br>
+    <br></br>
+    </h:form>
+       <h:form>
+                   <h:commandButton value="Kembali" action="makul.xhtml"></h:commandButton>
+       </h:form>
+  </center>
+</h:body>
+</html>

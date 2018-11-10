@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Tugas JSF RSBK</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h2>Daftar Mata Kuliah</h2>
+            <h:form>
+            <h:dataTable value="#{makul.get_all_makul}" var="mak" width="800px">
+                <h:outputText value="#{makul.KODE}"/>
+                <h:column>
+                  <f:facet name="header">KODE</f:facet>
+                <h:outputText value="#{mak.KODE}">
+                </h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Nama Makul</f:facet>
+                 <h:outputText value="#{mak.NAMA_MAKUL}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Nama Pengampu</f:facet>
+                 <h:outputText value="#{mak.NAMA_LENGKAP}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Edit</f:facet>
+                  <h:commandButton value="Edit" action="#{makul.Edit_Makul}">
+                  <f:param name="action" value="#{mak.KODE}" />
+                    </h:commandButton>
+                  </h:column>
+                  <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete" action="#{makul.Delete_Makul}">
+                      <f:param name="action" value="#{mak.KODE}" />
+                    </h:commandButton>
+                  </h:column>
+            </h:dataTable>
+            <br></br>
+            </h:form>
+        </center>
+            <h:form>
+        <center>
+                Tambahkan Data Mata Kuliah &nbsp;
+                <h:commandButton value="Tambahkan" action="TambahMakul.xhtml"></h:commandButton>
+        </center>
+            </h:form>
+                <h:form>
+        <center>
+                Lihat Daftar Dosen &nbsp;
+                <h:commandButton value="Dosen" action="index.xhtml"></h:commandButton>
+        </center>
+            </h:form>
+    </h:body>
+</html>

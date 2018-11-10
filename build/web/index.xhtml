@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Tugas JSF RSBK</title>
+    </h:head>
+    <h:body>
+        
+        <center>
+            <h2>Daftar Dosen</h2>
+            <h:form>
+            <h:dataTable value="#{pengampu.get_all_pengampu}" var="png" width="800px">
+                <h:outputText value="#{pengampu.NAMA_LENGKAP}"/>
+                <h:column>
+                  <f:facet name="header">NIP</f:facet>
+                  <h:outputText value="#{png.NIP}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">NAMA LENGKAP</f:facet>
+                 <h:outputText value="#{png.NAMA_LENGKAP}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">TEMPAT LAHIR</f:facet>
+                 <h:outputText value="#{png.TPT_LAHIR}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Edit</f:facet>
+                    <h:commandButton value="Edit" action="#{pengampu.Edit_Pengampu}">
+                      <f:param name="action" value="#{png.NIP}" />
+                    </h:commandButton>
+                  </h:column>
+                  <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete" action="#{pengampu.Delete_Pengampu}">
+                      <f:param name="action" value="#{png.NIP}" />
+                    </h:commandButton>
+                  </h:column>
+            </h:dataTable>
+            <br></br>
+            </h:form>
+            <h:form>
+                <h:form>
+                Tambahkan Data Dosen &nbsp;
+                <h:commandButton value="Tambahkan" action="Tambah.xhtml"></h:commandButton>
+                </h:form>
+                <br></br>
+            </h:form>
+                <h:form>
+                Lihat Daftar Mata Kuliah &nbsp;
+                <h:commandButton value="Mata Kuliah" action="makul.xhtml"></h:commandButton>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>Tugas JSF RSBK</title>
+</h:head>
+  <h:body>
+   <center>
+   <h:form>
+    <h1>Edit Data Dosen</h1>
+    
+     <table>
+            <tr>
+               <td>NIP:</td>
+               <td>
+                   <h:inputText id="NIP" value="#{EditPengampu.NIP}" required="true"></h:inputText>
+               </td>
+            </tr>
+            <tr>
+               <td>Nama Dosen:</td>
+               <td>
+                   <h:inputText id="NAMA_LENGKAP" value="#{EditPengampu.NAMA_LENGKAP}" required="true"></h:inputText>
+               </td>
+            </tr>
+            <tr>
+               <td>Tempat Lahir:</td>
+               <td><h:inputText value="#{EditPengampu.TPT_LAHIR}"></h:inputText></td>
+            </tr>
+     </table>
+    <br></br>
+    <h:commandButton value="Update" action="#{EditPengampu.Update_Pengampu}">
+     <f:param name="Update_NIP" value="#{EditPengampu.NIP}" /></h:commandButton>
+    <br></br>
+    <br></br>
+    </h:form>
+       <h:form>
+                   <h:commandButton value="Kembali" action="index.xhtml"></h:commandButton>
+       </h:form>
+  </center>
+</h:body>
+</html>
